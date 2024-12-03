@@ -1,42 +1,199 @@
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
-html,
-body {
-  max-width: 100vw;
-  overflow-x: hidden;
-}
-
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
 * {
-  box-sizing: border-box;
-  padding: 0;
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f8f9fa;
+  color: #333;
+  line-height: 1.6;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
+.container {
+  max-width: 600px;
+  margin: 50px auto;
+  padding: 20px;
+  background: #ffffff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+
+h2 {
+  font-family: "Outfit", sans-serif;
+  margin-bottom: 10px;
+  font-size: 1.5rem;
+  color: #1c1c9e;
+  text-align: center;
+  margin-top: 10px;
+}
+
+.profile-picture-container {
+  display: flex;
+  flex-direction: column; /* Stacks the image and button group vertically */
+  align-items: center; /* Centers content horizontally */
+  gap: 15px; /* Adds space between the image and the button group */
+}
+
+.profile-picture-container img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #ddd;
+}
+
+.button-group {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.button-group .btn {
+  font-family: "Outfit", sans-serif;
+  padding: 8px 12px;
+  font-size: 0.9rem;
+  border: none;
+  background-color: #1c1c9e;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  width: 100px; /* Keeps button width uniform */
+  text-align: center; /* Centers text inside the button */
+}
+
+.button-group .btn:hover {
+  background-color: #14146b;
+}
+
+.button-group .btn-danger {
+  background-color: #ff5e57;
+}
+
+.button-group .btn-danger:hover {
+  background-color: #d84336;
+}
+
+/* Form Styles */
+form {
+  margin-top: 20px;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-container {
+  display: flex;
+  gap: 20px; 
+}
+
+.first-form-group {
+  flex: 1; /* Allows each group to grow equally */
+}
+
+label {
+  display: block;
+  margin-top: 15px;
+  margin-bottom: 5px;
+}
+
+#email, #phone-number, .form-group {
+  width: 100% !important;
+}
+
+select {
+  width: 100%; /* Ensures the select box takes up full width of its container */
+  padding: 8px;
+  font-size: 14px;
+}
+
+.second-form-container{
+  width: 100% !important;
+  display: flex;
+  gap: 20px;
+}
+
+.third-form-container{
+  display: flex;
+  gap: 20px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+input, select, button {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.primary {
+  font-family: "Outfit", sans-serif;
+  font-size: 0.9rem;
+  border: none;
+  background-color: #1c1c9e;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  width: 200px;
+  margin-left: 180px;
+  text-align: center;
+  align-items: center;
+  margin: auto, 0;
+  margin-bottom: 15px;
+}
+
+button:hover {
+  background-color: #14146b;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+.container {
+    max-width: 90%;
+    margin: 10px auto;
+    padding: 10px;
+}
+
+h2, .personal {
+  font-size: 1rem;
+}
+
+.profile-picture-container img {
+    width: 80%;
+    max-width: 100px;
+}
+
+.form-container, .second-form-container, .third-form-container {
+    flex-direction: column;
+    gap: 10px;
+}
+
+.button-group .btn {
+    width: 100%;
+    font-size: 0.9rem;
+    padding: 12px;
+}
+
+.button-group .btn {
+  font-size: 0.8rem;
+}
+
+.personal {
+    font-size: 1rem;
+}
+
+.primary {
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+}
 }
